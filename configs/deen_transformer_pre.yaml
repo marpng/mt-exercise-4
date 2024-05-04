@@ -3,8 +3,8 @@ joeynmt_version: "2.0.0"
 
 data:
     train: "data/train"
-    dev:   "data/dev"
-    test:  "data/test"
+    dev: "data/dev"
+    test: "data/test"
     dataset_type: "plain"
     src:
         lang: "de"
@@ -19,7 +19,7 @@ data:
             pretokenizer: "none"
             num_merges: 3200
             codes: "data/codes3200.bpe"
-    trg: 
+    trg:
         lang: "en"
         lowercase: False
         level: "bpe"
@@ -32,12 +32,12 @@ data:
             pretokenizer: "none"
             num_merges: 3200
             codes: "data/codes3200.bpe"
+
 testing:
     beam_size: 5
     beam_alpha: 1.0
 
 training:
-    #load_model: "your/path.ckpt"
     random_seed: 42
     optimizer: "adam"
     normalization: "tokens"
@@ -56,7 +56,7 @@ training:
     logging_freq: 100
     eval_metric: ["bleu"]
     model_dir: "models/deen_transformer_pre"
-    overwrite: False
+    overwrite: True
     shuffle: True
     use_cuda: False
     max_output_length: 100
@@ -82,6 +82,7 @@ model:
         hidden_size: 256
         ff_size: 512
         dropout: 0
+        norm_type: "pre"
     decoder:
         type: "transformer"
         num_layers: 1
@@ -93,3 +94,4 @@ model:
         hidden_size: 256
         ff_size: 512
         dropout: 0
+        norm_type: "pre"

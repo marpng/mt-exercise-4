@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/maritina/Desktop/Uni/MachineTranslation/Exercises/mt-2024-exercise-4/mt-exercise-4/joeynmt/joeynmt/__main__.py", line 61, in <module>
+    main()
+  File "/Users/maritina/Desktop/Uni/MachineTranslation/Exercises/mt-2024-exercise-4/mt-exercise-4/joeynmt/joeynmt/__main__.py", line 41, in main
+    train(cfg_file=args.config_path, skip_test=args.skip_test)
+  File "/Users/maritina/Desktop/Uni/MachineTranslation/Exercises/mt-2024-exercise-4/mt-exercise-4/joeynmt/joeynmt/training.py", line 794, in train
+    model_dir = make_model_dir(
+                ^^^^^^^^^^^^^^^
+  File "/Users/maritina/Desktop/Uni/MachineTranslation/Exercises/mt-2024-exercise-4/mt-exercise-4/joeynmt/joeynmt/helpers.py", line 48, in make_model_dir
+    raise FileExistsError(f"Model directory {model_dir} exists "
+FileExistsError: Model directory /Users/maritina/Desktop/Uni/MachineTranslation/Exercises/mt-2024-exercise-4/mt-exercise-4/models/deen_transformer_post exists and overwriting is disabled.

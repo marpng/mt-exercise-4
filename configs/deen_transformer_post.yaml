@@ -1,4 +1,4 @@
-name: "deen_transformer_pre"
+name: "deen_transformer_post"
 joeynmt_version: "2.0.0"
 
 data:
@@ -19,7 +19,7 @@ data:
             pretokenizer: "none"
             num_merges: 3200
             codes: "data/codes3200.bpe"
-    trg: 
+    trg:
         lang: "en"
         lowercase: False
         level: "bpe"
@@ -37,7 +37,6 @@ testing:
     beam_alpha: 1.0
 
 training:
-    #load_model: "your/path.ckpt"
     random_seed: 42
     optimizer: "adam"
     normalization: "tokens"
@@ -55,7 +54,7 @@ training:
     validation_freq: 500
     logging_freq: 100
     eval_metric: ["bleu"]
-    model_dir: "models/deen_transformer_pre"
+    model_dir: "models/deen_transformer_post"
     overwrite: False
     shuffle: True
     use_cuda: False
@@ -82,6 +81,7 @@ model:
         hidden_size: 256
         ff_size: 512
         dropout: 0
+        norm_type: "post"
     decoder:
         type: "transformer"
         num_layers: 1
@@ -93,3 +93,4 @@ model:
         hidden_size: 256
         ff_size: 512
         dropout: 0
+        norm_type: "post"
